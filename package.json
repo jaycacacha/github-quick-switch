@@ -1,0 +1,26 @@
+{
+  "name": "github-account-switcher",
+  "displayName": "GitHub Quick Switch",
+  "description": "Switch which GitHub account Git pushes with, from a dropdown in the status bar. No more editing Windows Credential Manager.",
+  "version": "1.0.0",
+  "publisher": "jaycacacha",
+  "author": "jaycacacha",
+  "license": "MIT",
+  "icon": "icon.png",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["SCM Providers", "Other"],
+  "keywords": ["github", "git", "account", "switch", "multiple accounts", "credential manager", "work", "personal"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "repository": { "type": "git", "url": "https://github.com/jaycacacha/github-account-switcher" },
+  "bugs": { "url": "https://github.com/jaycacacha/github-account-switcher/issues" },
+  "homepage": "https://github.com/jaycacacha/github-account-switcher#readme",
+  "galleryBanner": { "color": "#24292f", "theme": "dark" },
+  "contributes": {
+    "commands": [
+      { "command": "ghSwitcher.pick", "title": "GitHub: Switch Account" },
+      { "command": "ghSwitcher.add", "title": "GitHub: Add Account" },
+      { "command": "ghSwitcher.editIdentity", "title": "GitHub: Edit Commit Name/Email for Account" }
+    ]
+  }
+}
