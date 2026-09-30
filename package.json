@@ -2,7 +2,7 @@
   "name": "github-account-switcher",
   "displayName": "GitHub Quick Switch",
   "description": "Switch which GitHub account Git pushes with, from a dropdown in the status bar. No more editing Windows Credential Manager.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "jaycacacha",
   "author": "jaycacacha",
   "license": "MIT",

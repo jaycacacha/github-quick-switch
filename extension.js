@@ -46,21 +46,24 @@ async function askIdentity(user) {
     title: `Commit name for "${user}"`, prompt: 'Name shown on your commits (Esc to skip)',
     value: current.name || user, ignoreFocusOut: true
   });
-  if (name === undefined) return current;
-  const email = await vscode.window.showInputBox({
+  const email = name === undefined ? undefined : await vscode.window.showInputBox({
     title: `Commit email for "${user}"`, prompt: 'Email shown on your commits (Esc to skip)',
     value: current.email || '', ignoreFocusOut: true
   });
-  if (email === undefined) return current;
-  const id = { name, email };
+  // Always save the answer (even a skip) so we never ask again on the next switch.
+  const id = {
+    name: (name ?? current.name ?? '').trim(),
+    email: (email ?? current.email ?? '').trim()
+  };
   await saveIdentity(user, id);
   return id;
 }
 
 async function switchTo(user) {
   await git(['config', '--global', CRED_KEY, user]);
-  let id = identities()[user];
-  if (!id) id = await askIdentity(user);
+  const saved = identities();
+  // Only ask the very first time this account is picked.
+  const id = Object.prototype.hasOwnProperty.call(saved, user) ? saved[user] : await askIdentity(user);
   if (id && id.name) await git(['config', '--global', 'user.name', id.name]);
   if (id && id.email) await git(['config', '--global', 'user.email', id.email]);
   await refresh();
