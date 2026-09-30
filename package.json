@@ -2,7 +2,7 @@
   "name": "github-account-switcher",
   "displayName": "GitHub Quick Switch",
   "description": "Switch which GitHub account Git pushes with, from a dropdown in the status bar. No more editing Windows Credential Manager.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "jaycacacha",
   "author": "jaycacacha",
   "license": "MIT",
@@ -12,9 +12,9 @@
   "keywords": ["github", "git", "account", "switch", "multiple accounts", "credential manager", "work", "personal"],
   "activationEvents": ["onStartupFinished"],
   "main": "./extension.js",
-  "repository": { "type": "git", "url": "https://github.com/jaycacacha/github-account-switcher" },
-  "bugs": { "url": "https://github.com/jaycacacha/github-account-switcher/issues" },
-  "homepage": "https://github.com/jaycacacha/github-account-switcher#readme",
+  "repository": { "type": "git", "url": "https://github.com/jaycacacha/github-quick-switch" },
+  "bugs": { "url": "https://github.com/jaycacacha/github-quick-switch/issues" },
+  "homepage": "https://github.com/jaycacacha/github-quick-switch#readme",
   "galleryBanner": { "color": "#24292f", "theme": "dark" },
   "contributes": {
     "commands": [
